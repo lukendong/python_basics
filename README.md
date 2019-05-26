@@ -2,14 +2,14 @@
 python大神正在路上  
 
 # case1.九九乘法表输出 
-# for语句
+for语句
 for i in range (1,10):  
     for j in range(1,10):  
         print(j,'X',i,'=',j*i,end=' ')  
         if j==i:  
             print('\n')  
             break  
-# while语句
+while语句
 i=0  
 while i<9:  
     i=i+1  
@@ -22,17 +22,17 @@ while i<9:
             break  
         
 # case2.树状输出  
-# while语句
+while语句
 i=0  
 while i<20:  
     i=i+1  
     print(' '*(21-i),'*'*(2*i-1))   
-# for语句
+for语句
 for i in range(1,21):  
     print(' '*(21-i),"*"*(2*i-1),' '*(21-i))  
     
 # case3.1234组合多少不重复的三位数分别输出 
-# for语句例1
+for语句例1
 num=0              
 for i in range(1,5):        
     for j in range(1,5):        
@@ -41,7 +41,7 @@ for i in range(1,5):
                 print(i,j,n)        
                 num=num+1       
 print("共有",num,"个数")        
-# for语句例2
+for语句例2
 m=[1,2,3,4]          
 n=0               
 for i in m:       
@@ -132,7 +132,7 @@ if y%4!=0:
 print('您输入的日期为第',s,"天")   
 
 # case5.一个整数，它加上100后是一个完全平方数，再加上168又是一个完全平方数，请问该数是多少？
-# 分析：2*X+1<=100,才可能加上100后被1个数完全平方
+分析：(x+1)的平方-x的平方即2*X+1<=100,才可能加上100后被1个数完全平方，所以x肯定50内，不需要把数字弄的过大，增加计算
 for x in range(1,50):       
     for i in range(1,100):      
         for j in range(1,100):      
@@ -146,10 +146,4 @@ for i in range(1,11):
     print("请输入第",i,"个数")        
     xi=int(input())     
     m.append(xi)        
-    print("是否继续输入:","输入n终止继续输入，否则任意继续输入")       
-    yn =input()     
-    if yn =='n':        
-        break       
-m.sort()        
-for j in m:     
-    print(j, end=' ')       
+    print("是否继续输入:","输入n终止继续输入
