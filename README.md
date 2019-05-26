@@ -33,24 +33,24 @@ for i in range(1,21):
     
 # case3.1234组合多少不重复的三位数分别输出 
 # for语句例1
-num=0
-for i in range(1,5):
-    for j in range(1,5):
-        for n in range(1,5):
-            if (i!=j)and(i!=n)and(j!=n):
-                print(i,j,n)
-                num=num+1
-print("共有",num,"个数")
+num=0              
+for i in range(1,5):        
+    for j in range(1,5):        
+        for n in range(1,5):        
+            if (i!=j)and(i!=n)and(j!=n):        
+                print(i,j,n)        
+                num=num+1       
+print("共有",num,"个数")        
 # for语句例2
-m=[1,2,3,4]  
-n=0  
-for i in m:  
-        for j in m:  
-            for k in m:  
-                if len({i,j,k})==3:  
-                    print(100*i+j*10+k)  
-                    n=n+1  
-print("能组成",n ,"个无重复数字")  
+m=[1,2,3,4]          
+n=0               
+for i in m:       
+        for j in m:          
+            for k in m:       
+                if len({i,j,k})==3:       
+                    print(100*i+j*10+k)          
+                    n=n+1        
+print("能组成",n ,"个无重复数字")         
 
 # case4.输入某年某月某日，判断这一天是这一年的第几天？
 while True:  
