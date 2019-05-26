@@ -131,4 +131,25 @@ if y%4!=0:
         s=31+28+31+30+31+30+31+31+30+31+30+d    
 print('您输入的日期为第',s,"天")   
 
- 
+# case5.一个整数，它加上100后是一个完全平方数，再加上168又是一个完全平方数，请问该数是多少？
+# 分析：2*X+1<=100,才可能加上100后被1个数完全平方
+for x in range(1,50):       
+    for i in range(1,100):      
+        for j in range(1,100):      
+            if x+100==i*i and x+100+168==j*j:       
+                print(x)        
+
+# case6.题目：输入任意整数（不多于10个），请把这些数由小到大输出
+m=[]        
+print("这是一个输入整数比较大小的程序，最多输入10个")        
+for i in range(1,11):       
+    print("请输入第",i,"个数")        
+    xi=int(input())     
+    m.append(xi)        
+    print("是否继续输入:","输入n终止继续输入，否则任意继续输入")       
+    yn =input()     
+    if yn =='n':        
+        break       
+m.sort()        
+for j in m:     
+    print(j, end=' ')       
