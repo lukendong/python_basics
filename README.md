@@ -1,8 +1,8 @@
 # python_basics
 python大神正在路上  
 
-case1.九九乘法表输出 
-# for语句  
+# case1.九九乘法表输出 
+# for语句
 for i in range (1,10):  
     for j in range(1,10):  
         print(j,'X',i,'=',j*i,end=' ')  
@@ -21,18 +21,17 @@ while i<9:
             print('\n')  
             break  
         
-case2.树状输出  
+# case2.树状输出  
 # while语句
 i=0  
 while i<20:  
     i=i+1  
     print(' '*(21-i),'*'*(2*i-1))   
-    
 # for语句
 for i in range(1,21):  
     print(' '*(21-i),"*"*(2*i-1),' '*(21-i))  
     
-case3.1234组合多少不重复的三位数分别输出 
+# case3.1234组合多少不重复的三位数分别输出 
 # for语句例1
 num=0
 for i in range(1,5):
@@ -42,7 +41,6 @@ for i in range(1,5):
                 print(i,j,n)
                 num=num+1
 print("共有",num,"个数")
-
 # for语句例2
 m=[1,2,3,4]  
 n=0  
@@ -54,7 +52,7 @@ for i in m:
                     n=n+1  
 print("能组成",n ,"个无重复数字")  
 
-case4.输入某年某月某日，判断这一天是这一年的第几天？
+# case4.输入某年某月某日，判断这一天是这一年的第几天？
 while True:  
     print('请输入年份:')  
     y=int(input())  
