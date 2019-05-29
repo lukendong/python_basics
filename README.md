@@ -147,3 +147,78 @@ for i in range(1,11):
     xi=int(input())     
     m.append(xi)        
     print("是否继续输入:","输入n终止继续输入
+    
+#case7.题目：中国有34个省会城市，要求打印20份试题问卷，要求每份都不一样？类似题目示例：请问**的省会城市是什么？正确答案与其余省会城市组成选项       
+#创建字典集，类似题库     
+def testexam(n):        
+    import random       
+    import os       
+    maincity={'江苏':'南京','浙江':'杭州','湖北':'武汉','湖南':'长沙','山东':'济南','陕西':'西安','黑龙江':'哈尔滨',
+          '吉林':'长春','辽宁':'沈阳','内蒙古':'呼和浩特','河北':'石家庄','新疆':'乌鲁木齐','甘肃':'兰州',
+          '青海':'西宁','宁夏':'银川','河南':'郑州','山西':'太原','安徽':'合肥','四川':'成都','贵州':'贵阳',
+          '上海':'上海','北京':'北京','天津':'天津','重庆':'重庆','云南':'昆明','广西':'南宁','西藏':'拉萨',
+          '江西':'南昌','广东':'广州','福建':'福州','台湾':'台北','海南':'海口','香港':'香港','澳门':'澳门'}        
+    cho_abc=['A','B','C','D']       
+    ans=[]      
+#创建试题       
+    anspaper=open('C:\\Users\\Luken\\Desktop\\testexam\\anspaper.txt','w')      
+    for exam_num in range(1,n+1):       
+#打开要创建的试卷、答案目录，若没有则创建       
+        exampaper=open('C:\\Users\\Luken\\Desktop\\testexam\\exampaper%s.txt' %(exam_num),'w')      
+        exampaper.write('name:\n\n')        
+        exampaper.write('class:\n\n')       
+        main=maincity.keys()        
+        main=list(main)     
+        city=maincity.values()      
+        city=list(city)     
+        for ques_num in range(1,21):        
+            p=main[random.randint(0,34-ques_num)]       
+            exampaper.write( '%s、请问%s的省会城市是什么?\n' %(ques_num,p))        
+            main.remove(p)      
+            ans.append(maincity[p])     
+            city.remove(maincity[p])        
+            ans=ans+random.sample(city,3)       
+            random.shuffle(ans)     
+            for cho_num in range(4):        
+                exampaper.write('%s、%s\n' %(cho_abc[cho_num],ans[cho_num]))            
+            rightans=cho_abc[ans.index(maincity[p])]        
+            anspaper.write(rightans)        
+            ans=[]      
+        anspaper.write('\n')        
+        exampaper.close()       
+    anspaper.close()        
+                
+print("请输入您要创建的试卷份数:")      
+n=int(input())      
+testexam(n)     
+
+#case8.题目：找出10000以内的所有质数        
+#分析：把素数2作为特例拿出来，事先定义素数个数x为1     
+print(2,end='\t')       
+m=[]        
+x=1     
+for i in range(3,10001):        
+    for j in range(2,i):        
+        m.append(i%j)       
+        if j==i-1:      
+            if 0 not in m:      
+                x+=1        
+                print(i,end='\t')       
+                if x%20==0:     
+                    print()     
+    m=[]        
+#斐波纳契数列     
+def f(i):       
+    x=[]        
+    for j in range(1,i+1):      
+        if j<3:     
+            x.append(1)     
+            print(x[j-1],end="\t")      
+        else:       
+            x.append(x[j-3]+x[j-2])     
+            print(x[j-1],end="\t")      
+            if (j+2)%20==0:     
+                print("\n")     
+print("请输入要看到多少个数的:")       
+n=int(input())      
+f(n)        
