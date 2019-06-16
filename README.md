@@ -228,4 +228,62 @@ def f(i):
                 print("\n")     
 print("请输入要看到多少个数的:")       
 n=int(input())      
-f(n)        
+f(n)
+
+#case10.扑克牌拿掉大小王，随便抽四张牌算       
+def cal24(num1,num2,num3,num4):     
+    n=[num1,num2,num3,num4]     
+    m=['+','-','*','/']     
+    total=0     
+    for a in range(0,4):        
+        first=n[a]      
+        n.pop(a)        
+        for b in range(0,3):        
+            second=n[b]     
+            n.pop(b)        
+            for j in m:     
+                two=str('(')+str(first)+j+str(second)+str(')')      
+                x=eval(two)     
+                for zz in m:        
+                    for c in range(0,2):        
+                        dong=n[c]       
+                        n.pop(c)        
+                        lasttwo=str('(')+str(dong)+zz+str(n[0])+str(')')        
+                        xy=eval(lasttwo)        
+                        for zzz in m:       
+                            try:        
+                                eval(str(x)+zzz+str(xy))        
+                            except ZeroDivisionError:       
+                                continue        
+                            if eval(str(x)+zzz+str(xy))==24:        
+                                    print(str(two)+zzz+str(lasttwo))        
+                                    total=total+1       
+                        n.insert(c,dong)           
+                for c in range(0,2):        
+                    third=n[c]      
+                    n.pop(c)        
+                    for k in m:     
+                        three=str("(")+str(two)+k+str(third)+str(")")       
+                        y=eval(str(x)+k+str(third))     
+                        for d in n:     
+                            for l in m:     
+                                four=str("(")+str(three)+l+str(d)+str(")")      
+                                z=eval(str(y)+l+str(d))     
+                                if z==24:       
+                                    print(four)     
+                                    total=total+1                      
+                    n=[num1,num2,num3,num4]     
+                    n.pop(a)        
+                    n.pop(b)        
+            n=[num1,num2,num3,num4]     
+            n.pop(a)        
+        n=[num1,num2,num3,num4]     
+    if total==0:        
+        print('sorry,没有计算得24的方法')       
+print('请分别输入你要计算的四个数：')     
+a=int(input())      
+b=int(input())      
+c=int(input())      
+d=int(input())      
+cal24(a,b,c,d)      
+
